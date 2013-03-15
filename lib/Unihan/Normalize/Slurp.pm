@@ -35,6 +35,7 @@ sub slurp_fh {
 			or die "There was extra content at the end of line $.!";
 		
 		$field =~ s/^k//;
+		chomp $value;
 		$value = process_field($field, $value);
 		$code =~ s/^U\+//;
 		$unihan->{hex($code)}->{$field} = $value;
@@ -46,7 +47,7 @@ sub slurp_fh {
 sub process_field {
 	my ($field, $value) = @_;
 	given($field){
-		#numeric fields; convert strings to numbers
+		### numeric fields; convert strings to numbers
 		#kPrimaryNumeric- the numeric value of a character. 一, 二, 三 = 1, 2, 3, etc.
 		when('PrimaryNumeric'){
 			return 1*$value;
@@ -59,5 +60,28 @@ sub process_field {
 		when('OtherNumeric'){
 			return 1*$value;
 		}
+		
+		### IRG fields
+		#kIICore- IRG-declared minimal set of chars for use in East Asia
+		when('IICore'){
+			return $value;
+		}
+		#kIRG_GSource- various standards in PRC and Singapore
+		when('IRG_GSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_HSource- Hong Kong Supplementary Character Set – 2008
+		when('IRG_HSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_JSource- Various standards/lists from Japan
+		when('IRG_JSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
 	}
 }
+
+#TODO: create an explain sub. This sub would give the meaning, in English, of a value for a field.

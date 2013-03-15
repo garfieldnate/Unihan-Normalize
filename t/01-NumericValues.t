@@ -13,7 +13,7 @@ filters {
 
 # slurp each of the blocks into a unihan structure and check the output
 for my $block (blocks()) {
-	is_deeply($block->input, $block->expected)
+	is_deeply($block->input, $block->expected, $block->name)
 		or note explain $block->input;
 }
 
