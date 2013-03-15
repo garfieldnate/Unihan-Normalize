@@ -1,4 +1,4 @@
-package TestUnihan;
+﻿package TestUnihan;
 
 # ABSTRACT: slurp and normalize the unihan database
 package Unihan::Normalize::Slurp;
@@ -47,7 +47,16 @@ sub process_field {
 	my ($field, $value) = @_;
 	given($field){
 		#numeric fields; convert strings to numbers
+		#kPrimaryNumeric- the numeric value of a character. 一, 二, 三 = 1, 2, 3, etc.
+		when('PrimaryNumeric'){
+			return 1*$value;
+		}
+		#kAccountingNumeric- used as in number in financial documents. 拾 = 10, etc
 		when('AccountingNumeric'){
+			return 1*$value;
+		}
+		#kOtherNumeric- used as a number in special cases (or just almost never used). 亖 = 4, 什 = 10, 㭍 = 7, etc
+		when('OtherNumeric'){
 			return 1*$value;
 		}
 	}
