@@ -112,6 +112,38 @@ sub process_field {
 			#todo- this may need to be split on a dash in the future
 			return $value;
 		}
+		### Dictionary indices
+		#todo- these may need to be split on dots in the future
+		## official IRG indices
+		# kIRGHanyuDaZidian- 1986 PRC dictionary used in four-dict sorting algorithm
+		# volume.page.position[01] (1 means not actually in the dictionary but would be in this spot)
+		when('IRGHanyuDaZidian'){
+			return $value;
+		}
+		
+		# kIRGKangXi- 《康熙字典》 Kang Xi Dictionary used in four-dict sorting algorithm
+		# page.position[01] (1 means not acutally in the dictionary but would be in this spot)
+		when('IRGKangXi'){
+			return $value;
+		}
+		
+		# kIRGDaeJaweon- Dae Jaweon (Korean) Dictionary used in four-dict sorting algorithm
+		# page.position[01] (1 means not acutally in the dictionary but would be in this spot)
+		when('IRGDaeJaweon'){
+			return $value;
+		}
+		
+		# kIRGDaiKanwaZiten- Index in the Dai Kanwa Ziten, aka Morohashi dictionary (Japanese) used in four-dict sorting algorithm
+		when('IRGDaiKanwaZiten'){
+			return $value;
+		}
+		
+		# kCihaiT- Cihai (辭海) general Chinese dictionary (Hong Kong 1983)
+		# page.row.column
+		#Provisional- no data yet
+		when('kCihaiT'){
+			return undef;
+		}
 	}
 }
 
