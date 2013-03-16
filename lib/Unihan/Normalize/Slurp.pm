@@ -101,6 +101,12 @@ sub process_field {
 			#todo- this may need to be split on a dash in the future
 			return $value;
 		}
+		#kIRG_USource- U-source ideograph database submitted to IRG for inclusion by various parties, or placeholders for no-longer used glyphs
+		#see http://www.unicode.org/reports/tr45
+		when('IRG_USource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
 	}
 }
 

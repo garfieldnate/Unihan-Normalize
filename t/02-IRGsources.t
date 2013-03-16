@@ -289,3 +289,17 @@ U+2F807	kIRG_TSource	TF-2D68
     'IRG_TSource' => 'TC-4A76'
   }
 }
+
+=== kIRG_USource field is properly processed
+--- input
+U+2B81A	kIRG_USource	UTC-00859
+U+2F89F	kIRG_USource	UCI-00944
+---  expected
+{
+  '178202' => {
+    'IRG_USource' => 'UTC-00859'
+  },
+  '194719' => {
+    'IRG_USource' => 'UCI-00944'
+  }
+}
