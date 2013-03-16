@@ -107,6 +107,11 @@ sub process_field {
 			#todo- this may need to be split on a dash in the future
 			return $value;
 		}
+		#kIRG_VSource- Vietname
+		when('IRG_VSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
 	}
 }
 

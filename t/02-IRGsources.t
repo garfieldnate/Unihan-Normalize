@@ -303,3 +303,29 @@ U+2F89F	kIRG_USource	UCI-00944
     'IRG_USource' => 'UCI-00944'
   }
 }
+
+=== kIRG_VSource field is properly processed
+--- input
+U+346B	kIRG_VSource	V0-3034
+U+4E00	kIRG_VSource	V1-4A21
+U+4E9E	kIRG_VSource	V2-8A2C
+U+5056	kIRG_VSource	V3-3024
+U+28599	kIRG_VSource	V4-5565
+---  expected
+ {
+   '13419' => {
+     'IRG_VSource' => 'V0-3034'
+   },
+   '165273' => {
+     'IRG_VSource' => 'V4-5565'
+   },
+   '19968' => {
+     'IRG_VSource' => 'V1-4A21'
+   },
+   '20126' => {
+     'IRG_VSource' => 'V2-8A2C'
+   },
+   '20566' => {
+     'IRG_VSource' => 'V3-3024'
+   }
+ }
