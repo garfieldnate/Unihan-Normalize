@@ -61,7 +61,7 @@ sub process_field {
 			return 1*$value;
 		}
 		
-		### IRG fields
+		### IRG fields- store plain strings
 		#kIICore- IRG-declared minimal set of chars for use in East Asia
 		when('IICore'){
 			return $value;
@@ -76,8 +76,28 @@ sub process_field {
 			#todo- this may need to be split on a dash in the future
 			return $value;
 		}
-		#kIRG_JSource- Various standards/lists from Japan
+		#kIRG_JSource- Japan
 		when('IRG_JSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_KPSource- North Korea
+		when('IRG_KPSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_KSource- South Korea
+		when('IRG_KSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_MSource- Macao Information System Character Set (澳門資訊系統字集)
+		when('IRG_MSource'){
+			#todo- this may need to be split on a dash in the future
+			return $value;
+		}
+		#kIRG_TSource- Taiwan
+		when('IRG_TSource'){
 			#todo- this may need to be split on a dash in the future
 			return $value;
 		}

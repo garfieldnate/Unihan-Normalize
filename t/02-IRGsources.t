@@ -211,3 +211,81 @@ U+9FC4	kIRG_JSource	JARIB-754F
     'IRG_JSource' => 'JARIB-754F'
   }
 }
+
+=== kIRG_KPSource field is properly processed
+--- input
+U+3ED0	kIRG_KPSource	KP0-EAB2
+U+3EDE	kIRG_KPSource	KP1-5952
+---  expected
+{
+  '16080' => {
+    'IRG_KPSource' => 'KP0-EAB2'
+  },
+  '16094' => {
+    'IRG_KPSource' => 'KP1-5952'
+  }
+}
+
+=== kIRG_KSource field is properly processed
+--- input
+U+2A77C	kIRG_MSource	MAC-00020
+---  expected
+{
+  '173948' => {
+    'IRG_MSource' => 'MAC-00020'
+  },
+}
+
+=== kIRG_TSource field is properly processed
+--- input
+U+4E00	kIRG_TSource	T1-4421
+U+4E07	kIRG_TSource	T2-2126
+U+4E20	kIRG_TSource	T3-2262
+U+4E23	kIRG_TSource	T4-2335
+U+52B6	kIRG_TSource	T5-253A
+U+5313	kIRG_TSource	T6-5074
+U+5655	kIRG_TSource	T7-2163
+U+2B74E	kIRG_TSource	TB-733E
+U+9FC4	kIRG_TSource	TC-4A76
+U+2A707	kIRG_TSource	TD-6735
+U+2A726	kIRG_TSource	TE-3350
+U+2F807	kIRG_TSource	TF-2D68
+---  expected
+{
+  '173831' => {
+    'IRG_TSource' => 'TD-6735'
+  },
+  '173862' => {
+    'IRG_TSource' => 'TE-3350'
+  },
+  '177998' => {
+    'IRG_TSource' => 'TB-733E'
+  },
+  '194567' => {
+    'IRG_TSource' => 'TF-2D68'
+  },
+  '19968' => {
+    'IRG_TSource' => 'T1-4421'
+  },
+  '19975' => {
+    'IRG_TSource' => 'T2-2126'
+  },
+  '20000' => {
+    'IRG_TSource' => 'T3-2262'
+  },
+  '20003' => {
+    'IRG_TSource' => 'T4-2335'
+  },
+  '21174' => {
+    'IRG_TSource' => 'T5-253A'
+  },
+  '21267' => {
+    'IRG_TSource' => 'T6-5074'
+  },
+  '22101' => {
+    'IRG_TSource' => 'T7-2163'
+  },
+  '40900' => {
+    'IRG_TSource' => 'TC-4A76'
+  }
+}
