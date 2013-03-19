@@ -22,7 +22,7 @@ for my $block (blocks()) {
 }
 
 __DATA__
-=== kIRGHanyuDaZidian field is properly processed
+=== kIRGHanyuDaZidian
 --- input
 U+3400	kIRGHanyuDaZidian	10015.030
 U+35CF	kIRGHanyuDaZidian	10652.011
@@ -36,7 +36,7 @@ U+35CF	kIRGHanyuDaZidian	10652.011
   }
 }
 
-=== kIRGKangXi field is properly processed
+=== kIRGKangXi
 --- input
 U+35CF	kIRGKangXi	0201.121
 U+35D4	kIRGKangXi	0201.180
@@ -50,7 +50,7 @@ U+35D4	kIRGKangXi	0201.180
   }
 }
 
-=== kIRGDaeJaweon field is properly processed
+=== kIRGDaeJaweon
 --- input
 U+4E00	kIRGDaeJaweon	0129.010
 U+4E37	kIRGDaeJaweon	0162.211
@@ -64,7 +64,7 @@ U+4E37	kIRGDaeJaweon	0162.211
   }
 }
 
-=== kIRGDaiKanwaZiten field is properly processed
+=== kIRGDaiKanwaZiten
 --- input
 U+4E38	kIRGDaiKanwaZiten	00094
 ---  expected
@@ -74,7 +74,7 @@ U+4E38	kIRGDaiKanwaZiten	00094
   }
 }
 
-=== kFennIndex field is properly processed
+=== kFennIndex
 --- input
 U+348B	kFennIndex	480.05
 ---  expected
@@ -84,7 +84,7 @@ U+348B	kFennIndex	480.05
   }
 }
 
-=== kGSR field is properly processed
+=== kGSR
 --- input
 U+34B8	kGSR	0526a
 U+34E0	kGSR	0618m
@@ -102,7 +102,7 @@ U+3754	kGSR	1166z
   }
 }
 
-=== kKarlgren field is properly processed
+=== kKarlgren
 --- input
 U+3795	kKarlgren	189
 U+7635	kKarlgren	1052*
@@ -120,7 +120,7 @@ U+811A	kKarlgren	506A
   }
 }
 
-=== kMatthews field is properly processed
+=== kMatthews
 --- input
 U+811A	kMatthews	1177
 U+8178	kMatthews	220
@@ -142,7 +142,7 @@ U+752D	kMatthews	5047.5
   }
 }
 
-=== kSBGY field is properly processed
+=== kSBGY
 --- input
 U+7530	kSBGY	134.25
 U+7536	kSBGY	475.32
@@ -160,7 +160,21 @@ U+753A	kSBGY	197.18 288.26 319.53 320.07
   }
 }
 
-=== kCowles field is properly processed
+=== kCheungBauerIndex
+--- input
+U+7534	kCheungBauerIndex	429.10
+U+7424	kCheungBauerIndex	439.01
+---  expected
+{
+  '29732' => {
+    'CheungBauerIndex' => '439.01'
+  },
+  '30004' => {
+    'CheungBauerIndex' => '429.10'
+  }
+}
+
+=== kCowles
 --- input
 U+28256	kCowles	2882
 U+29DAC	kCowles	3907.5
@@ -196,7 +210,7 @@ U+21121	kCowles	70
  }
 }
 
-=== kLau field is properly processed
+=== kLau
 --- input
 U+2145E	kLau	2945
 U+2214F	kLau	1879 1880
@@ -221,7 +235,7 @@ U+9F3B	kLau	85
   }
 }
 
-=== kMeyerWempe field is properly processed
+=== kMeyerWempe
 --- input
 U+9F3E	kMeyerWempe	784
 U+9F39	kMeyerWempe	889e
@@ -247,7 +261,7 @@ U+50E5	kMeyerWempe	736* 920d 1185a
   }
 }
 
-=== kNelson field is properly processed
+=== kNelson
 --- input
 U+5140	kNelson	0004
 U+50E5	kNelson	0542
