@@ -114,7 +114,9 @@ sub process_field {
 		}
 		### Dictionary indices
 		#todo- these may need to be split on dots in the future
+		
 		## official IRG indices
+		
 		# kIRGHanyuDaZidian- 1986 PRC dictionary used in four-dict sorting algorithm
 		# volume.page.position[01] (1 means not actually in the dictionary but would be in this spot)
 		when('IRGHanyuDaZidian'){
@@ -138,11 +140,91 @@ sub process_field {
 			return $value;
 		}
 		
+		## General Chinese dictionaries
+		
 		# kCihaiT- Cihai (辭海) general Chinese dictionary (Hong Kong 1983)
 		# page.row.column
 		#Provisional- no data yet
-		when('kCihaiT'){
+		when('CihaiT'){
 			return undef;
+		}
+		
+		# kFennIndex- Location in Fenn’s Chinese-English Pocket Dictionary (by Courtenay H. Fenn, 1942)
+		# page.position
+		when('FennIndex'){
+			return $value;
+		}
+		
+		# kGSR- position in Bernhard Karlgren’s Grammata Serica Recensa (1957), minus inscriptional forms
+		# [0001..1260][a-vx-z]'?
+		when('GSR'){
+			return $value;
+		}
+		
+		# kKarlgren- index in "Analytic Dictionary of Chinese and Sino-Japanese" by Bernhard Karlgren (1974)
+		# 1-9][0-9]{0,3}[A*]? (* indicates non-actual presence in the dictionary)
+		when('Karlgren'){
+			return $value;
+		}
+		
+		# kMatthews- index in the Mathews’ Chinese-English Dictionary by Robert H. Mathews (1975)
+		# [1-9][0-9]{0,3}(a|\.5)?
+		when('Matthews'){
+			return $value;
+		}
+		
+		# kSBGY- position in the Song Ben Guang Yun (SBGY) Medieval Chinese character dictionary
+		# page.position
+		when('SBGY'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		##Cantonese dictionaries
+		
+		# kCheungBauerIndex- position in "The Representation of Cantonese with Chinese Characters" by Cheung Kwan-hin and Robert S. Bauer
+		# page.position
+		when('CheungBauerIndex'){
+			return $value;
+		}
+		
+		# kCowles- index in A Pocket Dictionary of Cantonese Roy T. Cowles
+		when('Cowles'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kLau- index in "A Practical Cantonese-English Dictionary" by Sidney Lau
+		when('Lau'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kMeyerWempe- index in "Student’s Cantonese-English Dictionary" by Bernard F. Meyer and Theodore F. Wempe (1947)
+		# \d+[a-t*]? (letter indicates location in subsidiary, * indicates location in radical index but not main text)
+		when('MeyerWempe'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kNelson- index in "The Modern Reader’s Japanese-English Character Dictionary" by Andrew Nathaniel Nelson
+		when('Nelson'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		default {
+			die "unknown key: $_";
 		}
 	}
 }
