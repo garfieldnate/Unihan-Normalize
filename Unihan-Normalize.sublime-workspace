@@ -1,0 +1,288 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/User/perl.sublime-build",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"prov",
+				"Build: Run prove"
+			],
+			[
+				"prove",
+				"Build: Run prove"
+			],
+			[
+				"build",
+				"Build: Run test suite"
+			],
+			[
+				"",
+				"BracketHighlighter: Jump to Left Bracket"
+			],
+			[
+				"linter ",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"linter",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"sublimeL",
+				"SublimeLinter: Show Error List"
+			],
+			[
+				"synta javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syntax ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"syntax ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"synt",
+				"Set Syntax: Perl"
+			],
+			[
+				"sublime",
+				"SublimeLinter: Reset"
+			],
+			[
+				"synta js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"packag",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax per",
+				"Set Syntax: Perl"
+			],
+			[
+				"syntax htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"syntax",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"reset",
+				"SublimeCodeIntel: Reset"
+			]
+		],
+		"width": 536.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/Unihan-Normalize.sublime-project",
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/t/0-use.t",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Nate Glenn/Desktop/test.pl",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/User/perl.sublime-build",
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/lib/Unihan/Normalize/Slurp.pm",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/dev/CLSPworkspace/Rerank/src/edu/jhu/clsp/ws11/rerank/Classify.java",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/Java/JavaC.sublime-build",
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/0-use.t",
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/perl.sublime-workspace",
+		"/C/Users/Nate Glenn/Desktop/Unihan-Normalize/perl.sublime-project",
+		"/C/dev/looshootseedWorkspace/DictionaryTest/war/alldico-tei5-icsnlclean2.xml",
+		"/C/dev/looshootseedWorkspace/DictionaryTest/war/LUTentry.css",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/Default.sublime-commands",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/SublimeLinter.py",
+		"/C/dev/looshootseedWorkspace/DictionaryTest/war/DictionaryTest.html",
+		"/C/dev/newSoarWorkspace/sandbox-June11/perl/Soar/XNL/Grapher.pm",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/Main.sublime-menu",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/package-metadata.json",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/package_control.json",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SublimeLinter/sublimelinter/modules/perl.py",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/Emmet/Default (Windows).sublime-keymap",
+		"/C/Users/Nate Glenn/Desktop/to read/The Alignmnet Template Approach to Statistical Machine Translation.pdf",
+		"/C/Users/Nate Glenn/Desktop/to read/The Unbearable Automaticity of Being.pdf",
+		"/C/Users/Nate Glenn/Desktop/to read/Poetic Statistical Machine Translation- Rhyme and Meter.pdf",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/User/bh_core.sublime-settings",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/BracketHighlighter/bh_wrapping.sublime-settings",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/User/Base File.sublime-settings",
+		"/C/Users/Nate Glenn/AppData/Roaming/Sublime Text 2/Packages/BracketHighlighter/Example.sublime-keymap",
+		"/C/dev/looshootseedWorkspace/DictionaryTest/war/LDEngLut.xml",
+		"/C/dev/looshootseedWorkspace/DictionaryTest/war/DictionaryTest.css"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			",\n",
+			"ctrl+shift+b",
+			"find_previous_lint_error",
+			"panel_items",
+			"popup_error_list",
+			"sublimelinter_popup_errors_on_save",
+			"perl",
+			"perl_linter",
+			"checkbox",
+			"ctrl",
+			"ctrl+u",
+			"checkbox",
+			"perl",
+			"gloss type=\"cat",
+			">\\s*a",
+			">\\s*n",
+			"cus",
+			"sense",
+			"(",
+			"sense",
+			"gcm",
+			"nl",
+			"gram",
+			"[",
+			"Gram",
+			"etym",
+			"lang",
+			"etym"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 222.0
+	},
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"e",
+				"/C/dev/looshootseedWorkspace/DictionaryTest/war/DictionaryTest.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 140.0,
+	"status_bar_visible": true
+}
