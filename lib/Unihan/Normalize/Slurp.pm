@@ -222,11 +222,64 @@ sub process_field {
 			}
 			return $value;
 		}
+
+		### Readings
+		# kCantonese- Cantonese pronunciation, using jyutping romanization (multiples are sorted alphabetically)
+		when('Cantonese'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+
+		# kDefinition- English definition of character in modern Chinese (or another language as noted). 
+		# Also synonymns. Major defs separated by semicolon, minor by comma
+		when('Definition'){
+			return $value;
+		}
+
+		# kHangul- Modern Korean pronunciation. Do they distinguish Sino-Korean here?
+		when('Hangul'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+
+		# kHangul- Modern Chinese in Pinyin, plus a frequency number, provided by 現代漢語頻率詞典
+		when('HanyuPinlu'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
 		
+		# kHanyuPinyin- locations and associated pinyins in 漢語大字典. 
+		when('HanyuPinyin'){
+			if($value =~ /\s/){
+				return [map {process_hanyu($_)} split(/\s/, $value)];
+			}
+			return process_hanyu($value);
+		}
+
 		default {
 			die "unknown key: $_";
 		}
 	}
+}
+
+# Return {location => [pinyin]}
+sub process_hanyu{
+	my ($value) = @_;
+	$value =~ 
+	/
+		((?:\d{5}\.\d{2}0,?)+)							#comma-separated locations in dictionary
+		:												#followed by a colon, and then
+		((?:[^,]+,?)+)									#comma-separated pinyin
+	/x;
+	return {
+		$1 => [split ',', $2]
+	};
 }
 
 #TODO: create an explain sub. This sub would give the meaning, in English, of a value for a field.
