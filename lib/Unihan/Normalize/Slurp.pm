@@ -262,20 +262,116 @@ sub process_field {
 			return process_hanyu($value);
 		}
 
+		# kJapaneseKun- Japanese pronunciations, using Hepburn romanization; 
+		when('JapaneseKun'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kJapaneseOn- Sino-Japanese pronunciations, using Hepburn romanization
+		when('JapaneseOn'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		 
+		# # kKorean- Korean pronunciation, using Yale romanization
+		when('Korean'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kMandarin- The most common Chinese pronunciation, in Pinyin. 
+		# If there are 2 values, the first is mainland and the second is Taiwan.
+		# I didn't see any with multiple pronunciations in the database
+		when('Mandarin'){
+			if($value =~ /\s/){
+				my ($mainland, $taiwan) = split(/\s/, $value);
+				return {
+					mainland 	=> $mainland,
+					taiwan 		=> $taiwan
+				};
+			}
+			return $value;
+		}
+
+		# kTang- Tang dynasty pronunciation from (or consistent with) "T’ang Poetic Vocabulary" by Hugh M. Stimson
+		# An asterisk in the value indicates a frequency > 4 in the dictionary.
+		when('Tang'){
+			if($value =~ /\s/){
+				return [map {process_tang($_)} split(/\s/, $value)];
+			}
+			return process_tang($value);
+		}
+		
+		# kVietnamese- Quốc ngữ pronunciations
+		when('Vietnamese'){
+			if($value =~ /\s/){
+				return [split(/\s/, $value)];
+			}
+			return $value;
+		}
+		
+		# kXHC1983- Chinese pronunciations, in pinyin, according to 现代汉语词典
+		when('XHC1983'){
+			if($value =~ /\s/){
+				return [map {process_XHC1983($_)} split(/\s/, $value)];
+			}
+			return process_XHC1983($value);
+		}
+
 		default {
 			die "unknown key: $_";
 		}
 	}
 }
 
-# Return {location => [pinyin]}
+# Return {comma_separated_location => [pinyin]}
+# TODO: might want to allow splitting the location on comma here
 sub process_hanyu{
 	my ($value) = @_;
 	$value =~ 
 	/
-		((?:\d{5}\.\d{2}0,?)+)							#comma-separated locations in dictionary
-		:												#followed by a colon, and then
-		((?:[^,]+,?)+)									#comma-separated pinyin
+		((?:\d{5}\.\d{2}0,?)+)	#comma-separated locations in dictionary
+		:						#followed by a colon, and then
+		((?:[^,]+,?)+)			#comma-separated pinyin
+	/x;
+	return {
+		$1 => [split ',', $2]
+	};
+}
+
+# values starting with an asterisk include a frequency > 4 in the referenced dictionary
+# TODO: it might be better to have this extra information be optional.
+sub process_tang {
+	my ($value) = @_;
+	if(substr($value,0,1) eq '*'){
+		$value = substr($value, 1);
+		return {
+			greater_than_four 	=> 1,
+			value 				=> $value
+		};
+	}
+	return {
+			greater_than_four 	=> 0,
+			value 				=> $value
+		};
+}
+
+# Return {comma_separated_location => [pinyin]}
+# TODO: might want to allow splitting the location on comma here
+sub process_XHC1983 {
+	my ($value) = @_;
+	$value =~ 
+	/
+		((?:\d{4}\.\d{3},?)+)	#comma-separated locations in dictionary
+		:						#followed by a colon, and then
+		((?:[^,]+,?)+)			#comma-separated pinyin
 	/x;
 	return {
 		$1 => [split ',', $2]

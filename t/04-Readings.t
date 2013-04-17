@@ -82,6 +82,7 @@ U+4E39	kHanyuPinlu	dan1(31) dan5(11)
     ]
   }
 }
+
 === kHanyuPinyin
 --- input
 U+34CE	kHanyuPinyin	10297.260:qīn,qìn,qǐn
@@ -128,5 +129,161 @@ U+5EFE	kHanyuPinyin	10513.110,10514.010,10514.020:gǒng
         'gǒng'
       ]
     }
+  }
+}
+
+=== kJapaneseKun
+--- input
+U+5EFC	kJapaneseKun	SUNAWACHI NO
+U+5EFE	kJapaneseKun	SASAGERU
+--- expected
+{
+  '24316' => {
+    'JapaneseKun' => [
+      'SUNAWACHI',
+      'NO'
+    ]
+  },
+  '24318' => {
+    'JapaneseKun' => 'SASAGERU'
+  }
+}
+
+=== kJapaneseOn
+--- input
+U+5F03	kJapaneseOn	KI
+U+5EFD	kJapaneseOn	KAI E
+--- expected
+{
+  '24317' => {
+    'JapaneseOn' => [
+      'KAI',
+      'E'
+    ]
+  },
+  '24323' => {
+    'JapaneseOn' => 'KI'
+  }
+}
+
+=== kKorean
+--- input
+U+5F03	kKorean	KI
+U+5F14	kKorean	CO CEK
+--- expected
+{
+  '24323' => {
+    'Korean' => 'KI'
+  },
+  '24340' => {
+    'Korean' => [
+      'CO',
+      'CEK'
+    ]
+  }
+}
+
+=== kMandarin
+I faked one the row with multiple values because none existed in the official database
+--- input
+U+5F14	kMandarin	diào
+U+FFFF	kMandarin	long tong
+--- expected
+{
+  '24340' => {
+    'Mandarin' => 'diào'
+  },
+  '65535' => {
+    'Mandarin' => {
+      'mainland' => 'long',
+      'taiwan' => 'tong'
+    }
+  }
+}
+
+=== kTang
+--- input
+U+5F9E	kTang	*dzhiong tsiong
+U+5FA7	kTang	*biɛ̀n
+--- expected
+{
+  '24478' => {
+    'Tang' => [
+      {
+        'greater_than_four' => 1,
+        'value' => 'dzhiong'
+      },
+      {
+        'greater_than_four' => 0,
+        'value' => 'tsiong'
+      }
+    ]
+  },
+  '24487' => {
+    'Tang' => {
+      'greater_than_four' => 1,
+      'value' => 'biɛ̀n'
+    }
+  }
+}
+
+=== kVietnamese
+--- input
+U+5FE4	kVietnamese	ngỗ
+U+6174	kVietnamese	tiệp điệp
+--- expected
+{
+  '24548' => {
+    'Vietnamese' => 'ngỗ'
+  },
+  '24948' => {
+    'Vietnamese' => [
+      'tiệp',
+      'điệp'
+    ]
+  }
+}
+
+=== kXHC1983
+--- input
+U+6173	kXHC1983	0908.011:qiān
+U+61C9	kXHC1983	1383.051:yīng 1388.041:yìng
+U+625E	kXHC1983	0357.031:gǎn 0440.020,0441.021:hàn
+--- expected
+{
+  '24947' => {
+    'XHC1983' => {
+      '0908.011' => [
+        'qiān'
+      ]
+    }
+  },
+  '25033' => {
+    'XHC1983' => [
+      {
+        '1383.051' => [
+          'yīng'
+        ]
+      },
+      {
+        '1388.041' => [
+          'yìng'
+        ]
+      }
+    ]
+  },
+  '25182' => {
+    'XHC1983' => [
+      {
+        '0357.031' => [
+          'gǎn'
+        ]
+      },
+      {
+        '0440.020,0441.021' => [
+          'hàn'
+        ]
+      }
+    ]
   }
 }
